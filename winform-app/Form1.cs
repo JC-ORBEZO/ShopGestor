@@ -49,8 +49,17 @@ namespace winform_app
                 case "PRECIO":
                     txtCriterio.Text = "PRECIO";
                     break;
-                    //default: txtCriterio.Text = "RATA";
+                default:
+                    lblMensaje.Text = "ELEGIR CRITERIO";
+                    break;
             }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ArticuloNegocio aux = new ArticuloNegocio();            
+            dgvArticulos.DataSource = aux.buscar(cmbCriterio.Text, txtCriterio.Text);
+            dgvArticulos.Columns["urlImagen"].Visible = false;
         }
     }
 }

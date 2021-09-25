@@ -40,6 +40,7 @@ namespace winform_app
             this.lblIcono = new System.Windows.Forms.Label();
             this.cmbCriterio = new System.Windows.Forms.ComboBox();
             this.txtCriterio = new System.Windows.Forms.TextBox();
+            this.lblMensaje = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,6 +70,7 @@ namespace winform_app
             this.btnBuscar.TabIndex = 1;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnAgregar
             // 
@@ -167,7 +169,7 @@ namespace winform_app
             "MARCA",
             "CATEGORIA",
             "PRECIO"});
-            this.cmbCriterio.Location = new System.Drawing.Point(291, 97);
+            this.cmbCriterio.Location = new System.Drawing.Point(287, 93);
             this.cmbCriterio.Name = "cmbCriterio";
             this.cmbCriterio.Size = new System.Drawing.Size(213, 23);
             this.cmbCriterio.TabIndex = 9;
@@ -177,10 +179,22 @@ namespace winform_app
             // txtCriterio
             // 
             this.txtCriterio.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCriterio.Location = new System.Drawing.Point(510, 97);
+            this.txtCriterio.Location = new System.Drawing.Point(506, 93);
             this.txtCriterio.Name = "txtCriterio";
             this.txtCriterio.Size = new System.Drawing.Size(100, 23);
             this.txtCriterio.TabIndex = 10;
+            // 
+            // lblMensaje
+            // 
+            this.lblMensaje.AutoSize = true;
+            this.lblMensaje.BackColor = System.Drawing.Color.Yellow;
+            this.lblMensaje.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensaje.ForeColor = System.Drawing.Color.Red;
+            this.lblMensaje.Location = new System.Drawing.Point(377, 119);
+            this.lblMensaje.Name = "lblMensaje";
+            this.lblMensaje.Size = new System.Drawing.Size(149, 16);
+            this.lblMensaje.TabIndex = 11;
+            this.lblMensaje.Text = "MOSTRAR MENSAJE";
             // 
             // frmMenu
             // 
@@ -188,6 +202,7 @@ namespace winform_app
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(887, 473);
+            this.Controls.Add(this.lblMensaje);
             this.Controls.Add(this.txtCriterio);
             this.Controls.Add(this.cmbCriterio);
             this.Controls.Add(this.lblIcono);
@@ -220,6 +235,7 @@ namespace winform_app
         private System.Windows.Forms.Label lblIcono;
         private System.Windows.Forms.ComboBox cmbCriterio;
         private System.Windows.Forms.TextBox txtCriterio;
+        private System.Windows.Forms.Label lblMensaje;
     }
 }
 
