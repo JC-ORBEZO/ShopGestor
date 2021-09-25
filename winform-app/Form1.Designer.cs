@@ -38,6 +38,8 @@ namespace winform_app
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblIcono = new System.Windows.Forms.Label();
+            this.cmbCriterio = new System.Windows.Forms.ComboBox();
+            this.txtCriterio = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,12 +49,13 @@ namespace winform_app
             this.btnListar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnListar.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListar.ForeColor = System.Drawing.Color.White;
-            this.btnListar.Location = new System.Drawing.Point(12, 112);
+            this.btnListar.Location = new System.Drawing.Point(11, 148);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(118, 39);
             this.btnListar.TabIndex = 0;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = false;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // btnBuscar
             // 
@@ -60,7 +63,7 @@ namespace winform_app
             this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBuscar.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(12, 157);
+            this.btnBuscar.Location = new System.Drawing.Point(12, 193);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(117, 39);
             this.btnBuscar.TabIndex = 1;
@@ -73,7 +76,7 @@ namespace winform_app
             this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregar.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(13, 202);
+            this.btnAgregar.Location = new System.Drawing.Point(12, 238);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(117, 39);
             this.btnAgregar.TabIndex = 2;
@@ -86,7 +89,7 @@ namespace winform_app
             this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnModificar.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(12, 247);
+            this.btnModificar.Location = new System.Drawing.Point(13, 283);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(117, 39);
             this.btnModificar.TabIndex = 3;
@@ -99,7 +102,7 @@ namespace winform_app
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(11, 292);
+            this.button5.Location = new System.Drawing.Point(12, 328);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(118, 39);
             this.button5.TabIndex = 4;
@@ -112,22 +115,23 @@ namespace winform_app
             this.btnDetalle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDetalle.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDetalle.ForeColor = System.Drawing.Color.White;
-            this.btnDetalle.Location = new System.Drawing.Point(13, 337);
+            this.btnDetalle.Location = new System.Drawing.Point(13, 373);
             this.btnDetalle.Name = "btnDetalle";
             this.btnDetalle.Size = new System.Drawing.Size(117, 39);
             this.btnDetalle.TabIndex = 5;
-            this.btnDetalle.Text = "Detalle";
+            this.btnDetalle.Text = "Ver Detalle";
             this.btnDetalle.UseVisualStyleBackColor = false;
             // 
             // dgvArticulos
             // 
+            this.dgvArticulos.BackgroundColor = System.Drawing.Color.Black;
             this.dgvArticulos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArticulos.Location = new System.Drawing.Point(136, 112);
+            this.dgvArticulos.Location = new System.Drawing.Point(136, 148);
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.RowHeadersWidth = 51;
             this.dgvArticulos.RowTemplate.Height = 24;
-            this.dgvArticulos.Size = new System.Drawing.Size(693, 264);
+            this.dgvArticulos.Size = new System.Drawing.Size(739, 264);
             this.dgvArticulos.TabIndex = 6;
             // 
             // lblTitle
@@ -135,9 +139,9 @@ namespace winform_app
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Niagara Engraved", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(325, 35);
+            this.lblTitle.Location = new System.Drawing.Point(361, 33);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(156, 47);
+            this.lblTitle.Size = new System.Drawing.Size(151, 45);
             this.lblTitle.TabIndex = 7;
             this.lblTitle.Text = "ShopGgestor";
             // 
@@ -146,18 +150,46 @@ namespace winform_app
             this.lblIcono.AutoSize = true;
             this.lblIcono.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIcono.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lblIcono.Location = new System.Drawing.Point(487, 9);
+            this.lblIcono.Location = new System.Drawing.Point(518, 9);
             this.lblIcono.Name = "lblIcono";
             this.lblIcono.Size = new System.Drawing.Size(131, 91);
             this.lblIcono.TabIndex = 8;
             this.lblIcono.Text = "🪐";
+            // 
+            // cmbCriterio
+            // 
+            this.cmbCriterio.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCriterio.FormattingEnabled = true;
+            this.cmbCriterio.Items.AddRange(new object[] {
+            "ID",
+            "CODIGO",
+            "NOMBRE",
+            "MARCA",
+            "CATEGORIA",
+            "PRECIO"});
+            this.cmbCriterio.Location = new System.Drawing.Point(291, 97);
+            this.cmbCriterio.Name = "cmbCriterio";
+            this.cmbCriterio.Size = new System.Drawing.Size(213, 23);
+            this.cmbCriterio.TabIndex = 9;
+            this.cmbCriterio.Text = "CRITERIO DE BÚSQUEDA";
+            this.cmbCriterio.SelectedIndexChanged += new System.EventHandler(this.cmbCriterio_SelectedIndexChanged);
+            // 
+            // txtCriterio
+            // 
+            this.txtCriterio.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCriterio.Location = new System.Drawing.Point(510, 97);
+            this.txtCriterio.Name = "txtCriterio";
+            this.txtCriterio.Size = new System.Drawing.Size(100, 23);
+            this.txtCriterio.TabIndex = 10;
             // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(841, 432);
+            this.ClientSize = new System.Drawing.Size(887, 473);
+            this.Controls.Add(this.txtCriterio);
+            this.Controls.Add(this.cmbCriterio);
             this.Controls.Add(this.lblIcono);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.dgvArticulos);
@@ -186,6 +218,8 @@ namespace winform_app
         private System.Windows.Forms.DataGridView dgvArticulos;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblIcono;
+        private System.Windows.Forms.ComboBox cmbCriterio;
+        private System.Windows.Forms.TextBox txtCriterio;
     }
 }
 
