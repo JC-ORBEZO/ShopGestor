@@ -32,26 +32,32 @@ namespace winform_app
             switch (cmbCriterio.Text)
             {
                 case "ID":
+                    txtCriterio.Enabled = true;
                     lblMensaje.Text = "INGRESE UN ID";
                     txtCriterio.Text = "ID";
                     break;
                 case "CODIGO":
+                    txtCriterio.Enabled = true;
                     lblMensaje.Text = "INGRESE UN CODIGO";
                     txtCriterio.Text = "CODIGO";
                     break;
                 case "NOMBRE":
+                    txtCriterio.Enabled = true;
                     lblMensaje.Text = "INGRESE UN NOMBRE";
                     txtCriterio.Text = "NOMBRE";
                     break;
                 case "MARCA":
+                    txtCriterio.Enabled = true;
                     lblMensaje.Text = "INGRESE UNA MARCA";
                     txtCriterio.Text = "MARCA";
                     break;
                 case "CATEGORIA":
+                    txtCriterio.Enabled = true;
                     lblMensaje.Text = "INGRESE UNA CATEGORIA";
                     txtCriterio.Text = "CATEGORIA";
                     break;
                 case "PRECIO":
+                    txtCriterio.Enabled = true;
                     lblMensaje.Text = "INGRESE UN PRECIO";
                     txtCriterio.Text = "PRECIO";
                     break;
@@ -74,6 +80,14 @@ namespace winform_app
             {
                 lblMensaje.Text = "BUSQUEDA REALIZADA";
             }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            this.Opacity = .80;
+            Form2 nuevo = new Form2();
+            nuevo.ShowDialog();
+            this.Opacity = 100;
         }
     }
 }

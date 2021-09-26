@@ -84,6 +84,7 @@ namespace winform_app
             this.btnAgregar.TabIndex = 2;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnModificar
             // 
@@ -178,6 +179,7 @@ namespace winform_app
             // 
             // txtCriterio
             // 
+            this.txtCriterio.Enabled = false;
             this.txtCriterio.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCriterio.Location = new System.Drawing.Point(506, 93);
             this.txtCriterio.Name = "txtCriterio";
@@ -192,9 +194,8 @@ namespace winform_app
             this.lblMensaje.ForeColor = System.Drawing.Color.Red;
             this.lblMensaje.Location = new System.Drawing.Point(340, 119);
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(149, 16);
+            this.lblMensaje.Size = new System.Drawing.Size(0, 16);
             this.lblMensaje.TabIndex = 11;
-            this.lblMensaje.Text = "MOSTRAR MENSAJE";
             // 
             // frmMenu
             // 
@@ -215,6 +216,7 @@ namespace winform_app
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnListar);
             this.Name = "frmMenu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ShopGestor 🏬";
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             this.ResumeLayout(false);
