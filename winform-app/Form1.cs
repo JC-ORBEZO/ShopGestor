@@ -32,21 +32,27 @@ namespace winform_app
             switch (cmbCriterio.Text)
             {
                 case "ID":
+                    lblMensaje.Text = "INGRESE UN ID";
                     txtCriterio.Text = "ID";
                     break;
                 case "CODIGO":
+                    lblMensaje.Text = "INGRESE UN CODIGO";
                     txtCriterio.Text = "CODIGO";
                     break;
                 case "NOMBRE":
+                    lblMensaje.Text = "INGRESE UN NOMBRE";
                     txtCriterio.Text = "NOMBRE";
                     break;
                 case "MARCA":
+                    lblMensaje.Text = "INGRESE UNA MARCA";
                     txtCriterio.Text = "MARCA";
                     break;
                 case "CATEGORIA":
+                    lblMensaje.Text = "INGRESE UNA CATEGORIA";
                     txtCriterio.Text = "CATEGORIA";
                     break;
                 case "PRECIO":
+                    lblMensaje.Text = "INGRESE UN PRECIO";
                     txtCriterio.Text = "PRECIO";
                     break;
                 default:
@@ -60,6 +66,14 @@ namespace winform_app
             ArticuloNegocio aux = new ArticuloNegocio();            
             dgvArticulos.DataSource = aux.buscar(cmbCriterio.Text, txtCriterio.Text);
             dgvArticulos.Columns["urlImagen"].Visible = false;
+            if (aux.buscar(cmbCriterio.Text,txtCriterio.Text).Count() == 0)
+            {
+                lblMensaje.Text = "ELEMENTO NO ENCONTRADO";
+            }
+            else
+            {
+                lblMensaje.Text = "BUSQUEDA REALIZADA";
+            }
         }
     }
 }

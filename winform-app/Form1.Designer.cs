@@ -190,7 +190,7 @@ namespace winform_app
             this.lblMensaje.BackColor = System.Drawing.Color.Yellow;
             this.lblMensaje.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMensaje.ForeColor = System.Drawing.Color.Red;
-            this.lblMensaje.Location = new System.Drawing.Point(377, 119);
+            this.lblMensaje.Location = new System.Drawing.Point(340, 119);
             this.lblMensaje.Name = "lblMensaje";
             this.lblMensaje.Size = new System.Drawing.Size(149, 16);
             this.lblMensaje.TabIndex = 11;
