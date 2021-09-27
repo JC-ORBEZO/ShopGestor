@@ -41,7 +41,6 @@ namespace Negocio
             }
             
         }
-
         public List<Articulo> buscar(string item,string text)
         {
             List<Articulo> aux = new List<Articulo>();
@@ -99,5 +98,12 @@ namespace Negocio
 
             return aux;
         } 
+        public void agregar(Articulo aux)
+        {
+            AccesoDatos dato = new AccesoDatos();
+            dato.setearConsulta("INSERT INTO ARTICULOS (Codigo,Nombre,Descripcion,IdMarca, IdCategoria,ImagenUrl,Precio)VALUES('"+ aux.codigo +"','"+ aux.nombre +"','"+ aux.descripcion +"','"+ aux.marca.idMarca +"','"+ aux.categoria.idCat +"','"+ aux.urlImagen +"','"+aux.precio+"')");
+            dato.ejecutarAccion();
+            dato.cerrarConexion();
+        }
     }
 }

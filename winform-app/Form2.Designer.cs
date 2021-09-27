@@ -42,9 +42,10 @@ namespace winform_app
             this.btnAgregar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtUrl = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.lblMensaje = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtCodigo
@@ -150,6 +151,7 @@ namespace winform_app
             this.btnAgregar.TabIndex = 10;
             this.btnAgregar.Text = "AGREGAR";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // label2
             // 
@@ -173,19 +175,19 @@ namespace winform_app
             this.label3.TabIndex = 12;
             this.label3.Text = "PRECIO";
             // 
-            // textBox1
+            // txtPrecio
             // 
-            this.textBox1.Location = new System.Drawing.Point(124, 233);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 13;
+            this.txtPrecio.Location = new System.Drawing.Point(124, 233);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(100, 22);
+            this.txtPrecio.TabIndex = 13;
             // 
-            // textBox2
+            // txtUrl
             // 
-            this.textBox2.Location = new System.Drawing.Point(124, 205);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(188, 22);
-            this.textBox2.TabIndex = 14;
+            this.txtUrl.Location = new System.Drawing.Point(124, 205);
+            this.txtUrl.Name = "txtUrl";
+            this.txtUrl.Size = new System.Drawing.Size(188, 22);
+            this.txtUrl.TabIndex = 14;
             // 
             // label4
             // 
@@ -198,15 +200,27 @@ namespace winform_app
             this.label4.TabIndex = 15;
             this.label4.Text = "URL IMAGEN";
             // 
+            // lblMensaje
+            // 
+            this.lblMensaje.AutoSize = true;
+            this.lblMensaje.BackColor = System.Drawing.Color.Yellow;
+            this.lblMensaje.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensaje.ForeColor = System.Drawing.Color.Red;
+            this.lblMensaje.Location = new System.Drawing.Point(84, 270);
+            this.lblMensaje.Name = "lblMensaje";
+            this.lblMensaje.Size = new System.Drawing.Size(0, 16);
+            this.lblMensaje.TabIndex = 16;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(327, 339);
+            this.Controls.Add(this.lblMensaje);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtUrl);
+            this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnAgregar);
@@ -243,8 +257,9 @@ namespace winform_app
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.TextBox txtUrl;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblMensaje;
     }
 }
