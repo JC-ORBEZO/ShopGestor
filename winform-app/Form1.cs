@@ -69,17 +69,25 @@ namespace winform_app
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            ArticuloNegocio aux = new ArticuloNegocio();            
-            dgvArticulos.DataSource = aux.buscar(cmbCriterio.Text, txtCriterio.Text);
-            dgvArticulos.Columns["urlImagen"].Visible = false;
-            if (aux.buscar(cmbCriterio.Text,txtCriterio.Text).Count() == 0)
+            if (cmbCriterio.Text == "CRITERIO DE BUSQUEDA")
             {
-                lblMensaje.Text = "ELEMENTO NO ENCONTRADO";
+                lblMensaje.Text = "ELIJA CRITERIO DE BÚSQUEDA";
             }
             else
             {
-                lblMensaje.Text = "BUSQUEDA REALIZADA";
+                ArticuloNegocio aux = new ArticuloNegocio();
+                dgvArticulos.DataSource = aux.buscar(cmbCriterio.Text, txtCriterio.Text);
+                dgvArticulos.Columns["urlImagen"].Visible = false;
+                if (aux.buscar(cmbCriterio.Text, txtCriterio.Text).Count() == 0)
+                {
+                    lblMensaje.Text = "ARTICULO NO ENCONTRADO";
+                }
+                else
+                {
+                    lblMensaje.Text = "BUSQUEDA REALIZADA";
+                }
             }
+            
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -88,6 +96,12 @@ namespace winform_app
             Form2 nuevo = new Form2();
             nuevo.ShowDialog();
             this.Opacity = 100;
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Form3 nuevo = new Form3();
+            nuevo.ShowDialog();
         }
     }
 }

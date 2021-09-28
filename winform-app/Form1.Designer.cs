@@ -98,6 +98,7 @@ namespace winform_app
             this.btnModificar.TabIndex = 3;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // button5
             // 
@@ -174,7 +175,7 @@ namespace winform_app
             this.cmbCriterio.Name = "cmbCriterio";
             this.cmbCriterio.Size = new System.Drawing.Size(213, 23);
             this.cmbCriterio.TabIndex = 9;
-            this.cmbCriterio.Text = "CRITERIO DE BÚSQUEDA";
+            this.cmbCriterio.Text = "CRITERIO DE BUSQUEDA";
             this.cmbCriterio.SelectedIndexChanged += new System.EventHandler(this.cmbCriterio_SelectedIndexChanged);
             // 
             // txtCriterio
