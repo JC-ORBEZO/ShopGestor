@@ -15,7 +15,7 @@ namespace Negocio
             dato.setearConsulta("SELECT ARTICULOS.Id,ARTICULOS.Codigo,ARTICULOS.Nombre,ARTICULOS.Descripcion,ARTICULOS.ImagenUrl,MARCAS.Descripcion AS Marca,CATEGORIAS.Descripcion AS Categoria,ARTICULOS.Precio FROM ARTICULOS INNER JOIN MARCAS ON ARTICULOS.IdMarca=MARCAS.Id INNER JOIN CATEGORIAS ON ARTICULOS.IdCategoria = CATEGORIAS.Id");
             try
             {
-                dato.ejecutarLectura();
+                dato.ejecutarLectura();                
                 while (dato.Lector.Read())
                 {
                     Articulo nuevo = new Articulo();
@@ -104,6 +104,29 @@ namespace Negocio
             dato.setearConsulta("INSERT INTO ARTICULOS (Codigo,Nombre,Descripcion,IdMarca, IdCategoria,ImagenUrl,Precio)VALUES('"+ aux.codigo +"','"+ aux.nombre +"','"+ aux.descripcion +"','"+ aux.marca.idMarca +"','"+ aux.categoria.idCat +"','"+ aux.urlImagen +"','"+aux.precio+"')");
             dato.ejecutarAccion();
             dato.cerrarConexion();
+        }
+        public Articulo buscarPorId(int id)
+        {
+            AccesoDatos dato = new AccesoDatos();
+            dato.setearConsulta("SELECT ARTICULOS.Id,ARTICULOS.Codigo,ARTICULOS.Nombre,ARTICULOS.Descripcion,ARTICULOS.ImagenUrl,MARCAS.Descripcion AS Marca,CATEGORIAS.Descripcion AS Categoria,ARTICULOS.Precio FROM ARTICULOS INNER JOIN MARCAS ON ARTICULOS.IdMarca=MARCAS.Id INNER JOIN CATEGORIAS ON ARTICULOS.IdCategoria = CATEGORIAS.Id WHERE ARTICULOS.Id='"+ id +"'");
+            dato.ejecutarLectura();
+            //dato.Lector.Read();
+            Articulo nuevo = new Articulo();
+            while (dato.Lector.Read())
+            {                
+                nuevo.id = (int)dato.Lector["Id"];
+                nuevo.codigo = (string)dato.Lector["Codigo"];
+                nuevo.nombre = (string)dato.Lector["Nombre"];
+                nuevo.descripcion = (string)dato.Lector["Descripcion"];
+                nuevo.urlImagen = (string)dato.Lector["ImagenUrl"];
+                nuevo.marca = new Marca();
+                nuevo.marca.descripcionMarca = (string)dato.Lector["Marca"];
+                nuevo.categoria = new Categoria();
+                nuevo.categoria.descripcionCat = (string)dato.Lector["Categoria"];
+                nuevo.precio = (decimal)dato.Lector["Precio"];
+            }                
+            dato.cerrarConexion();
+            return nuevo;
         }
     }
 }

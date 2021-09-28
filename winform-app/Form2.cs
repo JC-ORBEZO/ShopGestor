@@ -27,6 +27,7 @@ namespace winform_app
                 //txtCodigo.Text.Trim();
                 ArticuloNegocio extra = new ArticuloNegocio();
                 Articulo nuevo = new Articulo();
+
                 nuevo.codigo = txtCodigo.Text;
                 nuevo.nombre = txtNombre.Text;
                 nuevo.descripcion = txtDescripcion.Text;

@@ -100,8 +100,8 @@ namespace winform_app
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Form3 nuevo = new Form3();
-            nuevo.ShowDialog();
+            Form3 nue = new Form3();
+            nue.ShowDialog();
         }
     }
 }
