@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 namespace Negocio
 {
     public class AccesoDatos
-    {
+    {        
         private SqlConnection conexion;
         private SqlCommand comando;
         private SqlDataReader lector;

@@ -46,6 +46,8 @@ namespace winform_app
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.lblId = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblMensaje
@@ -54,7 +56,7 @@ namespace winform_app
             this.lblMensaje.BackColor = System.Drawing.Color.Yellow;
             this.lblMensaje.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMensaje.ForeColor = System.Drawing.Color.Red;
-            this.lblMensaje.Location = new System.Drawing.Point(85, 277);
+            this.lblMensaje.Location = new System.Drawing.Point(85, 314);
             this.lblMensaje.Name = "lblMensaje";
             this.lblMensaje.Size = new System.Drawing.Size(0, 16);
             this.lblMensaje.TabIndex = 33;
@@ -64,7 +66,7 @@ namespace winform_app
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(14, 216);
+            this.label4.Location = new System.Drawing.Point(14, 258);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 16);
             this.label4.TabIndex = 32;
@@ -72,14 +74,14 @@ namespace winform_app
             // 
             // txtUrl
             // 
-            this.txtUrl.Location = new System.Drawing.Point(125, 212);
+            this.txtUrl.Location = new System.Drawing.Point(125, 252);
             this.txtUrl.Name = "txtUrl";
             this.txtUrl.Size = new System.Drawing.Size(188, 22);
             this.txtUrl.TabIndex = 31;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(125, 240);
+            this.txtPrecio.Location = new System.Drawing.Point(125, 280);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(100, 22);
             this.txtPrecio.TabIndex = 30;
@@ -89,7 +91,7 @@ namespace winform_app
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(14, 246);
+            this.label3.Location = new System.Drawing.Point(14, 286);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 16);
             this.label3.TabIndex = 29;
@@ -113,23 +115,24 @@ namespace winform_app
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(125, 292);
+            this.btnModificar.Location = new System.Drawing.Point(125, 347);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(100, 31);
             this.btnModificar.TabIndex = 27;
             this.btnModificar.Text = "MODIFICAR";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // txtCategoria
             // 
-            this.txtCategoria.Location = new System.Drawing.Point(125, 183);
+            this.txtCategoria.Location = new System.Drawing.Point(125, 224);
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.Size = new System.Drawing.Size(188, 22);
             this.txtCategoria.TabIndex = 26;
             // 
             // txtMarca
             // 
-            this.txtMarca.Location = new System.Drawing.Point(125, 155);
+            this.txtMarca.Location = new System.Drawing.Point(125, 196);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(188, 22);
             this.txtMarca.TabIndex = 25;
@@ -139,7 +142,7 @@ namespace winform_app
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategoria.ForeColor = System.Drawing.Color.White;
-            this.lblCategoria.Location = new System.Drawing.Point(14, 189);
+            this.lblCategoria.Location = new System.Drawing.Point(14, 230);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(91, 16);
             this.lblCategoria.TabIndex = 24;
@@ -150,7 +153,7 @@ namespace winform_app
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(14, 161);
+            this.label1.Location = new System.Drawing.Point(14, 202);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 16);
             this.label1.TabIndex = 23;
@@ -161,7 +164,7 @@ namespace winform_app
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescripcion.ForeColor = System.Drawing.Color.White;
-            this.lblDescripcion.Location = new System.Drawing.Point(14, 133);
+            this.lblDescripcion.Location = new System.Drawing.Point(14, 174);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(105, 16);
             this.lblDescripcion.TabIndex = 22;
@@ -172,7 +175,7 @@ namespace winform_app
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.White;
-            this.lblNombre.Location = new System.Drawing.Point(14, 105);
+            this.lblNombre.Location = new System.Drawing.Point(14, 146);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(71, 16);
             this.lblNombre.TabIndex = 21;
@@ -183,7 +186,7 @@ namespace winform_app
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCodigo.ForeColor = System.Drawing.Color.White;
-            this.lblCodigo.Location = new System.Drawing.Point(14, 77);
+            this.lblCodigo.Location = new System.Drawing.Point(14, 118);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(67, 16);
             this.lblCodigo.TabIndex = 20;
@@ -191,31 +194,52 @@ namespace winform_app
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(125, 127);
+            this.txtDescripcion.Location = new System.Drawing.Point(125, 168);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(188, 22);
             this.txtDescripcion.TabIndex = 19;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(125, 99);
+            this.txtNombre.Location = new System.Drawing.Point(125, 140);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(188, 22);
             this.txtNombre.TabIndex = 18;
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(125, 71);
+            this.txtCodigo.Location = new System.Drawing.Point(125, 112);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(188, 22);
             this.txtCodigo.TabIndex = 17;
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.ForeColor = System.Drawing.Color.White;
+            this.lblId.Location = new System.Drawing.Point(14, 89);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(23, 16);
+            this.lblId.TabIndex = 34;
+            this.lblId.Text = "ID";
+            // 
+            // txtId
+            // 
+            this.txtId.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.Location = new System.Drawing.Point(125, 84);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(100, 23);
+            this.txtId.TabIndex = 35;
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(327, 339);
+            this.ClientSize = new System.Drawing.Size(327, 401);
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.lblId);
             this.Controls.Add(this.lblMensaje);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtUrl);
@@ -261,5 +285,7 @@ namespace winform_app
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.TextBox txtId;
     }
 }

@@ -128,5 +128,12 @@ namespace Negocio
             dato.cerrarConexion();
             return nuevo;
         }
+        public void Modificar(Articulo aux, int id)
+        {
+            AccesoDatos dato = new AccesoDatos();
+            dato.setearConsulta("UPDATE ARTICULOS SET ARTICULOS.Codigo = '"+ aux.codigo +"', ARTICULOS.Nombre = '"+ aux.nombre +"', ARTICULOS.Descripcion = '"+aux.descripcion+"', ARTICULOS.IdMarca = '"+aux.marca.idMarca+"', ARTICULOS.IdCategoria = '"+ aux.categoria.idCat +"', ARTICULOS.ImagenUrl = '"+ aux.urlImagen +"', ARTICULOS.Precio = '"+ aux.precio +"' WHERE ARTICULOS.Id = '"+id+"'");
+            dato.ejecutarLectura();
+            dato.cerrarConexion();
+        }
     }
 }

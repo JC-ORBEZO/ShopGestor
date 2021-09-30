@@ -14,9 +14,12 @@ namespace winform_app
 {
     public partial class frmMenu : Form
     {
+        public int numId { get; set;}
         public frmMenu()
         {
             InitializeComponent();
+            //BANDERA PARA ATAJAR LA NO SELECCIÓN DE ALGUNA FILA DEL DGV
+            numId = -2;
         }
 
         private void btnListar_Click(object sender, EventArgs e)
@@ -100,8 +103,28 @@ namespace winform_app
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Form3 nue = new Form3();
-            nue.ShowDialog();
+            if (numId == -2)
+            {
+                lblMensaje2.Text = "SELECCIONE UN ARTICULO";
+            }
+            else
+            {
+                lblMensaje2.Text = "";
+                Form3 nue = new Form3(numId);
+                nue.ShowDialog();
+                // ACTUALIZACION DE LISTA EN DGV
+                ArticuloNegocio aux = new ArticuloNegocio();
+                dgvArticulos.DataSource = aux.listar();
+                dgvArticulos.Columns["urlImagen"].Visible = false;
+            }            
+        }
+
+        private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
+        {
+            //lblMensaje=dgvArticulos.Columns["Id"].  ToString());
+            lblMensaje2.Text = "";
+            Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+            numId=seleccionado.id;
         }
     }
 }

@@ -41,6 +41,7 @@ namespace winform_app
             this.cmbCriterio = new System.Windows.Forms.ComboBox();
             this.txtCriterio = new System.Windows.Forms.TextBox();
             this.lblMensaje = new System.Windows.Forms.Label();
+            this.lblMensaje2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,6 +138,7 @@ namespace winform_app
             this.dgvArticulos.RowTemplate.Height = 24;
             this.dgvArticulos.Size = new System.Drawing.Size(739, 264);
             this.dgvArticulos.TabIndex = 6;
+            this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
             // 
             // lblTitle
             // 
@@ -198,12 +200,24 @@ namespace winform_app
             this.lblMensaje.Size = new System.Drawing.Size(0, 16);
             this.lblMensaje.TabIndex = 11;
             // 
+            // lblMensaje2
+            // 
+            this.lblMensaje2.AutoSize = true;
+            this.lblMensaje2.BackColor = System.Drawing.Color.Yellow;
+            this.lblMensaje2.Font = new System.Drawing.Font("Lucida Sans", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMensaje2.ForeColor = System.Drawing.Color.Red;
+            this.lblMensaje2.Location = new System.Drawing.Point(366, 415);
+            this.lblMensaje2.Name = "lblMensaje2";
+            this.lblMensaje2.Size = new System.Drawing.Size(0, 16);
+            this.lblMensaje2.TabIndex = 12;
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(887, 473);
+            this.Controls.Add(this.lblMensaje2);
             this.Controls.Add(this.lblMensaje);
             this.Controls.Add(this.txtCriterio);
             this.Controls.Add(this.cmbCriterio);
@@ -239,6 +253,7 @@ namespace winform_app
         private System.Windows.Forms.ComboBox cmbCriterio;
         private System.Windows.Forms.TextBox txtCriterio;
         private System.Windows.Forms.Label lblMensaje;
+        private System.Windows.Forms.Label lblMensaje2;
     }
 }
 
