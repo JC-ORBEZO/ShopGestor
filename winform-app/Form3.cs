@@ -47,7 +47,11 @@ namespace winform_app
             extra.categoria.idCat = 1;
             extra.urlImagen = txtUrl.Text;
             extra.precio = decimal.Parse(txtPrecio.Text);
+            //extra.precio = Convert.ToInt64(txtPrecio.Text);            
+            MessageBox.Show(txtPrecio.Text);
+            MessageBox.Show(decimal.Parse(txtPrecio.Text).ToString());
             nuevo.Modificar(extra,int.Parse(txtId.Text));
+            this.Close();
         }
     }
 }

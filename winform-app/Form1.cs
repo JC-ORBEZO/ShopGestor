@@ -99,6 +99,9 @@ namespace winform_app
             Form2 nuevo = new Form2();
             nuevo.ShowDialog();
             this.Opacity = 100;
+            ArticuloNegocio aux = new ArticuloNegocio();
+            dgvArticulos.DataSource = aux.listar();
+            dgvArticulos.Columns["urlImagen"].Visible = false;
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
