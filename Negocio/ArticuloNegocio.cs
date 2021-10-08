@@ -100,8 +100,15 @@ namespace Negocio
         public void agregar(Articulo aux)
         {
             AccesoDatos dato = new AccesoDatos();
-            dato.setearConsulta("INSERT INTO ARTICULOS (Codigo,Nombre,Descripcion,IdMarca, IdCategoria,ImagenUrl,Precio)VALUES('"+ aux.codigo +"','"+ aux.nombre +"','"+ aux.descripcion +"','"+ aux.marca.idMarca +"','"+ aux.categoria.idCat +"','"+ aux.urlImagen +"','"+aux.precio+"')");
-            dato.ejecutarAccion();
+            try
+            {
+                dato.setearConsulta("INSERT INTO ARTICULOS (Codigo,Nombre,Descripcion,IdMarca, IdCategoria,ImagenUrl,Precio)VALUES('" + aux.codigo + "','" + aux.nombre + "','" + aux.descripcion + "','" + aux.marca.idMarca + "','" + aux.categoria.idCat + "','" + aux.urlImagen + "','" + aux.precio + "')");
+                dato.ejecutarAccion();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }            
             dato.cerrarConexion();
         }
         public Articulo buscarPorId(int id)
@@ -130,8 +137,15 @@ namespace Negocio
         public void Modificar(Articulo aux, int id)
         {
             AccesoDatos dato = new AccesoDatos();
-            dato.setearConsulta("UPDATE ARTICULOS SET ARTICULOS.Codigo = '"+ aux.codigo +"', ARTICULOS.Nombre = '"+ aux.nombre +"', ARTICULOS.Descripcion = '"+aux.descripcion+"', ARTICULOS.IdMarca = '"+aux.marca.idMarca+"', ARTICULOS.IdCategoria = '"+ aux.categoria.idCat +"', ARTICULOS.ImagenUrl = '"+ aux.urlImagen +"', ARTICULOS.Precio = '"+ aux.precio +"' WHERE ARTICULOS.Id = '"+id+"'");
-            dato.ejecutarLectura();
+            try
+            {
+                dato.setearConsulta("UPDATE ARTICULOS SET ARTICULOS.Codigo = '" + aux.codigo + "', ARTICULOS.Nombre = '" + aux.nombre + "', ARTICULOS.Descripcion = '" + aux.descripcion + "', ARTICULOS.IdMarca = '" + aux.marca.idMarca + "', ARTICULOS.IdCategoria = '" + aux.categoria.idCat + "', ARTICULOS.ImagenUrl = '" + aux.urlImagen + "', ARTICULOS.Precio = '" + aux.precio + "' WHERE ARTICULOS.Id = '" + id + "'");
+                dato.ejecutarLectura();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }            
             dato.cerrarConexion();
         }
     }

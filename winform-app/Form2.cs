@@ -38,11 +38,19 @@ namespace winform_app
                 nuevo.categoria.idCat = int.Parse(txtCategoria.Text);
                 //nuevo.categoria.idCat = int.Parse(txtCategoria.Text);
                 nuevo.urlImagen = txtUrl.Text;
-                nuevo.precio = decimal.Parse(txtPrecio.Text);
-                extra.agregar(nuevo);
-                //MessageBox.Show("Agregado");                
-                lblMensaje.Text = "CORRECTAMENTE AGREGADO";
-                this.Close();
+                try
+                {
+                    nuevo.precio = decimal.Parse(txtPrecio.Text);
+                    extra.agregar(nuevo);
+                    //MessageBox.Show("Agregado");                
+                    lblMensaje.Text = "CORRECTAMENTE AGREGADO";
+                    this.Close();
+                }
+                catch (Exception)
+                {
+                    lblMensaje.Text = "PRECIO INCORRECTO";
+                }
+                
             }
             else
             {

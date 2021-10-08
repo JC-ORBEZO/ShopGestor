@@ -46,12 +46,21 @@ namespace winform_app
             extra.categoria = new Categoria();
             extra.categoria.idCat = 1;
             extra.urlImagen = txtUrl.Text;
-            extra.precio = decimal.Parse(txtPrecio.Text);
-            //extra.precio = Convert.ToInt64(txtPrecio.Text);            
-            MessageBox.Show(txtPrecio.Text);
-            MessageBox.Show(decimal.Parse(txtPrecio.Text).ToString());
-            nuevo.Modificar(extra,int.Parse(txtId.Text));
-            this.Close();
+            try
+            {
+                extra.precio = decimal.Parse(txtPrecio.Text);
+                //extra.precio = Convert.ToInt64(txtPrecio.Text);            
+                MessageBox.Show(txtPrecio.Text);
+                //  Al ingresar un decimal con coma este MessageBox muestra el número con coma
+                MessageBox.Show(decimal.Parse(txtPrecio.Text).ToString());
+                nuevo.Modificar(extra, int.Parse(txtId.Text));                
+                this.Close();
+            }
+            catch (Exception)
+            {
+                lblMensaje.Text = "PRECIO INCORRECTO";
+            }
+            
         }
     }
 }
