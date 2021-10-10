@@ -129,5 +129,18 @@ namespace winform_app
             Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
             numId=seleccionado.id;
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (numId == -2)
+            {
+                lblMensaje2.Text = "SELECIONE UN ARTICULO";
+            }
+            else
+            {
+                Form4 nuevo = new Form4(numId);
+                nuevo.Show();
+            }            
+        }
     }
 }
