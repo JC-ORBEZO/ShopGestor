@@ -127,6 +127,7 @@ namespace winform_app
             this.btnDetalle.TabIndex = 5;
             this.btnDetalle.Text = "Ver Detalle";
             this.btnDetalle.UseVisualStyleBackColor = false;
+            this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
             // 
             // dgvArticulos
             // 

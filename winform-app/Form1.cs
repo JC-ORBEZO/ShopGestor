@@ -142,5 +142,18 @@ namespace winform_app
                 nuevo.Show();
             }            
         }
+
+        private void btnDetalle_Click(object sender, EventArgs e)
+        {
+            if (numId == -2)
+            {
+                lblMensaje2.Text = "SELECIONE UN ARTICULO";
+            }
+            else
+            {
+                Form5 extra = new Form5();
+                extra.Show();
+            }            
+        }
     }
 }
