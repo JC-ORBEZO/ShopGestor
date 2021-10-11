@@ -46,7 +46,7 @@ namespace winform_app
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.pbImage = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -192,6 +192,7 @@ namespace winform_app
             this.pbImage.Location = new System.Drawing.Point(370, 96);
             this.pbImage.Name = "pbImage";
             this.pbImage.Size = new System.Drawing.Size(202, 205);
+            this.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImage.TabIndex = 31;
             this.pbImage.TabStop = false;
             // 
@@ -206,12 +207,12 @@ namespace winform_app
             this.label2.TabIndex = 32;
             this.label2.Text = "ID";
             // 
-            // textBox1
+            // txtID
             // 
-            this.textBox1.Location = new System.Drawing.Point(143, 68);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 33;
+            this.txtID.Location = new System.Drawing.Point(143, 68);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(100, 22);
+            this.txtID.TabIndex = 33;
             // 
             // Form5
             // 
@@ -219,7 +220,7 @@ namespace winform_app
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(593, 346);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pbImage);
             this.Controls.Add(this.label4);
@@ -266,6 +267,6 @@ namespace winform_app
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.PictureBox pbImage;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtID;
     }
 }

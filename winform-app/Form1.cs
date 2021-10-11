@@ -15,6 +15,7 @@ namespace winform_app
     public partial class frmMenu : Form
     {
         public int numId { get; set;}
+        public Articulo proba = new Articulo();
         public frmMenu()
         {
             InitializeComponent();
@@ -127,7 +128,16 @@ namespace winform_app
             //lblMensaje=dgvArticulos.Columns["Id"].  ToString());
             lblMensaje2.Text = "";
             Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            numId=seleccionado.id;
+            numId=seleccionado.id;proba.id= seleccionado.id;
+            proba.codigo= seleccionado.codigo;
+            proba.nombre = seleccionado.nombre;
+            proba.descripcion = seleccionado.descripcion;
+            proba.marca = new Marca();
+            proba.marca.descripcionMarca = seleccionado.marca.descripcionMarca;
+            proba.categoria = new Categoria();
+            proba.categoria.descripcionCat = seleccionado.categoria.descripcionCat;
+            proba.urlImagen = seleccionado.urlImagen;
+            proba.precio = seleccionado.precio;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -151,7 +161,7 @@ namespace winform_app
             }
             else
             {
-                Form5 extra = new Form5();
+                Form5 extra = new Form5(proba);
                 extra.Show();
             }            
         }
